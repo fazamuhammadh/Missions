@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+<link href="http://fonts.cdnfonts.com/css/valorant" rel="stylesheet">
+<style>
+    :active,
+    :hover,
+    :focus {
+        outline: 0 !important;
+        outline-offset: 0;
+    }
+
+    ::before,
+    ::after {
+        position: absolute;
+        content: "";
+    }
+
+    .btn-holder {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 1000px;
+        margin: 10px auto 35px;
+    }
+
+    .btn {
+        position: relative;
+        display: inline-block;
+        width: auto;
+        height: auto;
+        background-color: rgb(164, 159, 159);
+        border-radius: 3px;
+        border: none;
+        cursor: pointer;
+        min-width: 150px;
+    }
+
+    .btn span {
+        position: relative;
+        display: inline-block;
+        font-size: 13px;
+        font-weight: bolder;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px 0px;
+        transition: 0.3s;
+    }
+
+    .btn-1::before {
+        border-radius: 3px;
+        box-shadow: 0 0 1px 0 rgb(56 64 79 / 30%), 0 1px 1px 0 rgb(9 24 54 / 24%),
+            0 2px 5px 0 rgb(9 24 54 / 6%);
+        background-color: #ffffff;
+        transition: 0.3s ease-out;
+    }
+
+    .btn-1 span {
+        color: #484b51;
+        transition: 0.2s 0.1s;
+    }
+
+    .btn-1 span:hover {
+        color: #ffffff;
+        transition: 0.2s 0.1s;
+    }
+
+    .btn.hover-filled-opacity::before {
+        top: 0;
+        bottom: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 1;
+    }
+
+    .btn.hover-filled-opacity:hover::before {
+        opacity: 0;
+    }
+
+
+    .logo {
+        margin-top: 0px;
+        width: 200px;
+        height: 50px;
+    }
+
+    .container {
+        margin: 0 auto;
+        width: 1100px;
+    }
+
+    .navbar {
+        margin-top: -20px;
+    }
+
+    .navbar a {
+        float: right;
+        margin-top: -5px;
+        margin-right: 20px;
+        color: #949eb2;
+        text-decoration: none;
+        font-family: 'Source Sans Pro';
+        font-size: 18px;
+        padding-left: 22px;
+    }
+
+    .navbar a:hover {
+        text-decoration: underline;
+    }
+
+    .box {
+        width: 100%;
+        margin: 0 auto;
+        background-color: #e9ecef;
+        height: 210px;
+        margin-top: 7%;
+        border-radius: 10px;
+    }
+
+    .box_footer {
+        width: 65%;
+        margin: 0 auto;
+        background-color: #e9ecef;
+        height: 210px;
+        margin-top: 7%;
+        border-radius: 10px;
+    }
+
+    .textbox {
+        margin-top: -35px;
+        margin-left: 150px;
+        font-family: 'VALORANT', sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .textbox1 {
+        margin-left: 30px;
+        font-family: 'Source Sans Pro';
+        font-size: 26px;
+        padding-top: 20px;
+        color: #0f1923;
+    }
+
+    .textbox2 {
+        margin-left: 30px;
+        font-family: 'Source Sans Pro';
+        font-size: 20px;
+        padding-top: 20px;
+        margin-top: -40px;
+        color: #778298
+    }
+
+    #button {
+        width: 150px;
+        background-color: white;
+        border-radius: 2px;
+        margin-left: 30px;
+        border: 0px;
+        box-shadow: 0.2px 0.3px grey;
+        font-family: 'Source Sans Pro';
+        font-size: 16px;
+        font-weight: bold;
+        height: 33px;
+    }
+
+    .image_list {
+        width: 170px;
+        height: 170px;
+        object-fit: cover;
+        border-radius: 35px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .title {
+        font-size: 30px;
+        font-family: 'Source Sans Pro';
+        font-weight: bold;
+        color: #ff4655;
+        padding: 0px 0px 2% 4%;
+    }
+
+    .desc {
+        font-size: 15px;
+        font-family: 'Source Sans Pro';
+        font-weight: normal;
+        line-height: 1.5rem;
+        padding: 0px 0px 3% 4%;
+    }
+
+    .bottom_card {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .btn_card {
+        padding: 0 0 0 4%;
+    }
+
+    .preview {
+        display: flex;
+    }
+
+    .text_preview {
+        font-family: sans-serif;
+        font-size: 13px;
+        padding: 11px 10px;
+    }
+
+    .img_preview {
+        height: 25px;
+        width: 40px;
+        padding: 6px 0px;
+        object-fit: cover;
+    }
+
+    .box_card {
+        display: flex;
+        margin-bottom: 6%;
+    }
+
+    .container_box {
+        margin-top: 6%;
+    }
+
+    .btn_footer {
+        display: flex;
+    }
+
+    input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 1px solid #555;
+        outline: none;
+    }
+
+    input[type=text]:focus {
+        background-color: lightblue;
+    }
+
+    input[type=submit] {
+        background-color: #04AA6D;
+        border: none;
+        height: 43px;
+        width: 80px;
+        color: white;
+        text-decoration: none;
+        margin: 7px 0px;
+        cursor: pointer;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 6%;
+        color: grey ;
+        font-family: 'Source Sans Pro';
+    }
+
+    .footer_right {
+        display: flex;
+    }
+
+    .footer_right p {
+        margin-right: 20px;
+        font-family: 'Source Sans Pro';
+    }
+</style>
+
+
+
+<body>
+    <div class="container">
+        <img src="logo.svg" class="logo">
+
+        <div class="navbar">
+            <a href="#">Leaderboards</a>
+            <a href="#">Info</a>
+            <a href="#">Sign In</a>
+            <p class="textbox">valorant</p>
+        </div>
+
+        <div class="box">
+            <p class="textbox1">A 5v5 character-based tactical shooter</p>
+            <p class="textbox2">Blend your style and experience on a global, competitive stage. You have 13 rounds to
+                attack and defend your side using sharp gunplay and tactical abilities. And, with one life per-round,
+                you'll need to think faster than your opponent if you want to survive. Take on foes across Competitive
+                and Unranked modes as well as Deathmatch and Spike Rush.</p>
+            <input type="button" id="button" value="Play Now">
+        </div>
+
+        <div class="container_box">
+            <div class="box_card">
+                <div class="image_box">
+                    <img class="image_list" src="agent.jpg" alt="agent-image">
+                </div>
+                <div>
+                    <div class="title">
+                        Your Agents
+                    </div>
+                    <div class="desc">
+                        Every single agent roles in VALORANT have their own unique sets of strengths, weaknesses, and
+                        jobs
+                        to accomplish. The roles are namely: Duelists, Initiators, Controllers, and Sentinels.
+                    </div>
+                    <div class="bottom_card">
+                        <div class="btn_card">
+                            <button class="btn btn-1 hover-filled-opacity">
+                                <span>Read More</span>
+                            </button>
+                        </div>
+                        <div class="preview">
+                            <a href="https://www.youtube.com/watch?v=FUoqAn5T4h4">
+                                <div class="text_preview">Review Agents</div>
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=FUoqAn5T4h4"><img class="img_preview"
+                                    src="youtube.png" alt="youtube"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box_card">
+                <div class="image_box">
+                    <img class="image_list" src="maps.webp" alt="agent-image">
+                </div>
+                <div>
+                    <div class="title">
+                        Your Maps
+                    </div>
+                    <div class="desc">
+                        Fight around the world. Each map is a playground to showcase your creative thinking.
+                        Purpose-built for team strategies, spectacular plays, and clutch moments.
+                        Make the play others will imitate for years to come.
+                    </div>
+                    <div class="bottom_card">
+                        <div class="btn_card">
+                            <button class="btn btn-1 hover-filled-opacity">
+                                <span>Read More</span>
+                            </button>
+                        </div>
+                        <div class="preview">
+                            <a href="https://www.youtube.com/watch?v=sDvn4TUGqlE">
+                                <div class="text_preview">Review Maps</div>
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=sDvn4TUGqlE"><img class="img_preview"
+                                    src="youtube.png" alt="youtube"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box_card">
+                <div class="image_box">
+                    <img class="image_list" src="weapons.jpg" alt="agent-image">
+                </div>
+                <div>
+                    <div class="title">
+                        Your Weapons
+                    </div>
+                    <div class="desc">
+                        There are a total of 17 guns available to use in the game, each with their own individual
+                        strength and set of stats.
+                        There are sidearms, SMGs, shotguns, rifles, snipers, and heavies.
+                    </div>
+                    <div class="bottom_card">
+                        <div class="btn_card">
+                            <button class="btn btn-1 hover-filled-opacity">
+                                <span>Read More</span>
+                            </button>
+                        </div>
+                        <div class="preview">
+                            <a href="https://www.youtube.com/watch?v=LF9pPIi5ops">
+                                <div class="text_preview">Review Weapons</div>
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=LF9pPIi5ops"><img class="img_preview"
+                                    src="youtube.png" alt="youtube"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="box_footer">
+                    <p class="textbox1">RIOT GAMES</p>
+                    <p class="textbox2">© 2022 Riot Games, Inc. Riot Games, VALORANT, and any associated logos are
+                        trademarks, service marks, and/or registered trademarks of Riot Games, Inc.</p>
+                    <div class="btn_footer">
+                        <form style="width: 40%; padding:0 0 0 4%">
+                            <input type="text" id="fname" name="fname" value="">
+                        </form>
+                        <input type="submit" value="Submit">
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div>
+                    <p>© 2022</p>
+                </div>
+                <div class="footer_right">
+                    <p>Privacy Notice</p>
+                    <p>Terms of Service</p>
+                    <p>Cookie Preferences</p>
+                </div>
+            </div>
+
+        </div>
+
+</body>
+
+</html>
